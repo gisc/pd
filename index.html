@@ -92,23 +92,46 @@
             align-items: center;
         }
 
-        .hero-text h1 {
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-right h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.2;
         }
 
-        .hero-text .subtitle {
+        .hero-left .subtitle {
             font-size: 1.5rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
         }
 
-        .hero-text .description {
+        .hero-left .description {
             font-size: 1.1rem;
             margin-bottom: 2rem;
             color: var(--text-secondary);
@@ -201,6 +224,20 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             width: 45%;
             margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .timeline-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .timeline-text {
+            flex: 1;
         }
 
         .timeline-item:nth-child(even) .timeline-content {
@@ -410,10 +447,16 @@
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2rem;
             }
 
-            .hero-text h1 {
+            .hero-right h1 {
                 font-size: 2.5rem;
+            }
+
+            .hero-image {
+                width: 150px;
+                height: 150px;
             }
 
             .timeline::before {
@@ -423,6 +466,15 @@
             .timeline-content {
                 width: calc(100% - 60px);
                 margin-left: 60px !important;
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .timeline-image {
+                width: 60px;
+                height: 60px;
+                align-self: center;
             }
 
             .timeline-year {
@@ -462,26 +514,29 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Transforming Computing Education</h1>
+                <div class="hero-left">
+                    <img src="static/gisc.png" alt="Gi Soong Chee" class="hero-image">
                     <p class="subtitle">Computing Educator & Advocate</p>
                     <p class="description">
                         Three decades of pioneering learner-centric pedagogy, building vibrant communities, 
                         and bridging the gap between industry and academia in Singapore's computing education landscape.
                     </p>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">30+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Schools Impacted</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">2000+</div>
-                        <div class="stat-label">Students Reached</div>
+                <div class="hero-right">
+                    <h1>Transforming Computing Education</h1>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">30+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Schools Impacted</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">2000+</div>
+                            <div class="stat-label">Learners Reached</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -499,41 +554,56 @@
                 <div class="timeline-item">
                     <div class="timeline-year">1996-2007</div>
                     <div class="timeline-content">
-                        <h3>Victoria Junior College</h3>
-                        <p><strong>Computing Educator - Foundation Years</strong></p>
-                        <p>Built foundational expertise in Computing education and student-centred learning approaches. Established early commitment to making Computing accessible and engaging for diverse learners.</p>
+                        <img src="static/vjc.png" alt="Victoria Junior College" class="timeline-image">
+                        <div class="timeline-text">
+                            <h3>Victoria Junior College</h3>
+                            <p><strong>Computing Educator - Foundation Years</strong></p>
+                            <p>Built foundational expertise in Computing education and student-centred learning approaches. Established early commitment to making Computing accessible and engaging for diverse learners.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2007-2020</div>
                     <div class="timeline-content">
-                        <h3>Dunman High School</h3>
-                        <p><strong>Computing Educator - Innovation Pioneer</strong></p>
-                        <p>Pioneered and mentored student-directed teams for representation at national and international conferences and competitions in alignment with school mission to care, serve and lead.</p>
+                        <img src="static/dhs.png" alt="Dunman High School" class="timeline-image">
+                        <div class="timeline-text">
+                            <h3>Dunman High School</h3>
+                            <p><strong>Computing Educator - Innovation Pioneer</strong></p>
+                            <p>Pioneered and mentored student-directed teams for representation at national and international conferences and competitions in alignment with school mission to care, serve and lead.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2021-2022</div>
                     <div class="timeline-content">
-                        <h3>National Institute of Education</h3>
-                        <p><strong>Teaching Fellow - Systemic Impact</strong></p>
-                        <p>Established NIE's partnership with MOE Curriculum Planning Development Division for Computing teachers conversion course. Organised Computational Thinking Festival (CTFest) for students and teachers.</p>
+                        <img src="static/nie.png" alt="National Institute of Education" class="timeline-image">
+                        <div class="timeline-text">
+                            <h3>National Institute of Education</h3>
+                            <p><strong>Teaching Fellow - Systemic Impact</strong></p>
+                            <p>Established NIE's partnership with MOE Curriculum Planning Development Division for Computing teachers conversion course. Organised Computational Thinking Festival (CTFest) for students and teachers.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2023-2024</div>
                     <div class="timeline-content">
-                        <h3>Anderson Serangoon Junior College</h3>
-                        <p><strong>Computing Educator - Planting New Seeds</strong></p>
-                        <p>Started A-level Computing in ASRJC and value added school's programmes such as ICT Champions student leadership curriculum and ArtScience Festival.</p>
+                        <img src="static/asrjc.png" alt="Anderson Serangoon Junior College" class="timeline-image">
+                        <div class="timeline-text">
+                            <h3>Anderson Serangoon Junior College</h3>
+                            <p><strong>Computing Educator - Planting New Seeds</strong></p>
+                            <p>Started A-level Computing in ASRJC and value added school's programmes such as ICT Champions student leadership curriculum and ArtScience Festival.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2025 - Now</div>
                     <div class="timeline-content">
-                        <h3>ComputingSG</h3>
-                        <p><strong>School Attendant - HUAT BIG BIG</strong></p>
-                        <p>Retyred to start new Computing school on 8 Aug in celebration of SG60 to advance Computing education for all in Singapore and beyond.</p>
+                        <img src="static/hbbt.png" alt="ComputingSG" class="timeline-image">
+                        <div class="timeline-text">
+                            <h3>ComputingSG</h3>
+                            <p><strong>School Attendant - HUAT BIG BIG</strong></p>
+                            <p>Retyred to start new Computing school on 8 Aug in celebration of SG60 to advance Computing education for all in Singapore and beyond.</p>
+                        </div>
                     </div>
                 </div>
             </div>
