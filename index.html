@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gi Soong Chee - Computing Educator & Advocate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--surface) 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-text .description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .timeline-item:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .timeline-content {
+            position: relative;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Awards Grid */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .award-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .award-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-year {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .skill-bar {
+            width: 60%;
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 3px;
+            animation: progressFill 1.5s ease;
+        }
+
+        /* Critical Reflection */
+        .reflection {
+            background: var(--surface);
+        }
+
+        .reflection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .reflection-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .reflection-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .reflection-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .reflection-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .reflection-card li:last-child {
+            border-bottom: none;
+        }
+
+        .reflection-card li::before {
+            content: '→';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes progressFill {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+
+            .timeline-year {
+                left: 20px;
+                transform: none;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">GI SOONG CHEE</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#reflection">Reflection</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transforming Computing Education</h1>
+                    <p class="subtitle">Computing Educator & Advocate</p>
+                    <p class="description">
+                        Three decades of pioneering learner-centric pedagogy, building vibrant communities, 
+                        and bridging the gap between industry and academia in Singapore's computing education landscape.
+                    </p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Schools Impacted</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2000+</div>
+                        <div class="stat-label">Students Reached</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Journey -->
+    <section id="journey">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Journey</h2>
+                <p>A transformational career spanning classroom innovation to systemic educational change</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1996-2007</div>
+                    <div class="timeline-content">
+                        <h3>Victoria Junior College</h3>
+                        <p><strong>Computing Educator - Foundation Years</strong></p>
+                        <p>Built foundational expertise in Computing education and student-centred learning approaches. Established early commitment to making Computing accessible and engaging for diverse learners.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2007-2020</div>
+                    <div class="timeline-content">
+                        <h3>Dunman High School</h3>
+                        <p><strong>Computing Educator - Innovation Pioneer</strong></p>
+                        <p>Pioneered and mentored student-directed teams for representation at national and international conferences and competitions in alignment with school mission to care, serve and lead.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021-2022</div>
+                    <div class="timeline-content">
+                        <h3>National Institute of Education</h3>
+                        <p><strong>Teaching Fellow - Systemic Impact</strong></p>
+                        <p>Established NIE's partnership with MOE Curriculum Planning Development Division for Computing teachers conversion course. Organised Computational Thinking Festival (CTFest) for students and teachers.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023-2024</div>
+                    <div class="timeline-content">
+                        <h3>Anderson Serangoon Junior College</h3>
+                        <p><strong>Computing Educator - Planting New Seeds</strong></p>
+                        <p>Started A-level Computing in ASRJC and value added school's programmes such as ICT Champions student leadership curriculum and ArtScience Festival.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025 - Now</div>
+                    <div class="timeline-content">
+                        <h3>ComputingSG</h3>
+                        <p><strong>School Attendant - HUAT BIG BIG</strong></p>
+                        <p>Retyred to start new Computing school on 8 Aug in celebration of SG60 to advance Computing education for all in Singapore and beyond.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact & Recognition -->
+    <section id="impact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Impact & Recognition</h2>
+                <p>Achievements reflecting commitment to educational excellence and community building</p>
+            </div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">🏆</div>
+                    <h3 class="award-title">Outstanding Computing Teachers Award</h3>
+                    <p class="award-year">2016</p>
+                    <p>Google-IMDA-MOE recognition for groundbreaking classroom innovation and student engagement in computing education.</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🐍</div>
+                    <h3 class="award-title">Python Software Foundation Fellow</h3>
+                    <p class="award-year">2023 Q1</p>
+                    <p>International recognition for significant contributions to Python community outreach and educational initiatives.</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🎓</div>
+                    <h3 class="award-title">Academy of Singapore Teachers Associate</h3>
+                    <p class="award-year">2024</p>
+                    <p>Awarded Innovator status for excellence in fostering teachers' professional development and educational leadership.</p>
+                </div>
+            </div>
+
+            <!-- BuildingBloCS Initiative -->
+            <div style="margin-top: 4rem;">
+                <div class="section-header">
+                    <h3>BuildingBloCS Initiative</h3>
+                    <p>Flagship "By Students, For Students" nationwide computing education outreach</p>
+                </div>
+                <div class="award-card" style="max-width: 800px; margin: 0 auto;">
+                    <p><strong>Since 2017:</strong> Founded and oversees a transformative peer-learning initiative spanning 50+ schools across Singapore. This student-led program delivers workshops on AI, computational thinking, and software development, reaching thousands of students annually and embodying the principles of learner-centric education.</p>
+                    <div style="margin-top: 1rem;">
+                        <strong>Key Achievements:</strong>
+                        <ul style="margin-top: 0.5rem; padding-left: 1rem;">
+                            <li>Sustainable peer-teaching model adopted nationally</li>
+                            <li>Cross-school collaboration framework</li>
+                            <li>Student leadership development at scale</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise & Growth -->
+    <section id="expertise">
+        <div class="container">
+            <div class="section-header">
+                <h2>Expertise & Continuous Growth</h2>
+                <p>Technical proficiencies and commitment to lifelong learning</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Current Learning</h3>
+                    <div class="skill-item">
+                        <span>WSQ DDDLP 2.0</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Agentic Workflow</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Vibe Engineering</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Technical Expertise</h3>
+                    <div class="skill-item">
+                        <span>Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Web Development</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>AI & Data Science</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Educational Leadership</h3>
+                    <div class="skill-item">
+                        <span>Curriculum Design</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Adult Training</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Community Building</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 98%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Project Management</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Timeline -->
+            <div style="margin-top: 3rem;">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Recent Professional Development</h3>
+                <div class="awards-grid">
+                    <div class="award-card">
+                        <h4>WSQ ACLP 2.0</h4>
+                        <p class="award-year">Completed July 2024</p>
+                        <p>Advanced Certificate in Learning and Performance, demonstrating expertise in adult learning methodologies.</p>
+                    </div>
+                    <div class="award-card">
+                        <h4>CS50 for Educators</h4>
+                        <p class="award-year">2023, 2024</p>
+                        <p>Harvard University workshop series, enhancing pedagogical approaches in computer science education.</p>
+                    </div>
+                    <div class="award-card">
+                        <h4>AI & Data Science</h4>
+                        <p class="award-year">2019-2024</p>
+                        <p>Continuous upskilling through DataCamp and AI Singapore programs, staying current with emerging technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Critical Reflection -->
+    <section id="reflection" class="reflection">
+        <div class="container">
+            <div class="section-header">
+                <h2>Critical Self-Reflection</h2>
+                <p>Honest assessment of strengths, gaps, and future aspirations as an adult educator</p>
+            </div>
+            <div class="reflection-grid">
+                <div class="reflection-card">
+                    <h3>Strengths</h3>
+                    <ul>
+                        <li><strong>Community Builder:</strong> Proven ability to create sustainable, student-led initiatives that scale across institutions</li>
+                        <li><strong>Pedagogical Innovator:</strong> Three decades of refining learner-centric approaches with measurable impact</li>
+                        <li><strong>Bridge Builder:</strong> Unique capacity to connect industry, academia, and student communities</li>
+                        <li><strong>Continuous Learner:</strong> Commitment to staying current with both technical and pedagogical advances</li>
+                        <li><strong>Systems Thinker:</strong> Experience operating at classroom, institutional, and national levels</li>
+                    </ul>
+                </div>
+
+                <div class="reflection-card">
+                    <h3>Development Areas</h3>
+                    <ul>
+                        <li><strong>Emerging Technologies:</strong> While strong in AI literacy, need deeper expertise in latest developments like agentic workflows</li>
+                        <li><strong>Research Publication:</strong> Rich practical experience could benefit from more formal research documentation</li>
+                        <li><strong>International Reach:</strong> Significant regional impact could be expanded to global computing education community</li>
+                        <li><strong>Adult Learning Theory:</strong> Pursuing WSQ DDDLP 2.0 to strengthen theoretical foundation in adult education</li>
+                        <li><strong>Digital Innovation:</strong> Exploring vibe engineering and modern learning experience design</li>
+                    </ul>
+                </div>
+
+                <div class="reflection-card">
+                    <h3>Future Aspirations</h3>
+                    <ul>
+                        <li><strong>Adult Education Excellence:</strong> Complete WSQ DDDLP 2.0 to become certified adult learning designer</li>
+                        <li><strong>Global Impact:</strong> Expand BuildingBloCS model internationally, sharing Singapore's student-led approach</li>
+                        <li><strong>AI Integration:</strong> Pioneer responsible AI integration in computing curricula across educational levels</li>
+                        <li><strong>Teacher Development:</strong> Scale teacher conversion programs to meet growing demand for computing educators</li>
+                        <li><strong>Industry Collaboration:</strong> Deepen partnerships between educational institutions and technology sector</li>
+                    </ul>
+                </div>
+
+                <div class="reflection-card">
+                    <h3>Core Values Alignment</h3>
+                    <ul>
+                        <li><strong>Learner-Centricity:</strong> Every initiative prioritizes student agency and peer learning</li>
+                        <li><strong>Community Focus:</strong> Belief that sustainable change happens through collaborative ecosystems</li>
+                        <li><strong>Growth Mindset:</strong> Commitment to continuous learning models the behavior expected of students</li>
+                        <li><strong>Accessibility:</strong> Computing education should be inclusive and available to diverse learners</li>
+                        <li><strong>Innovation with Purpose:</strong> Technology adoption must serve pedagogical goals, not drive them</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Stakeholder Value Proposition -->
+            <div style="margin-top: 3rem;">
+                <div class="award-card" style="max-width: 900px; margin: 0 auto;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Value Proposition for Stakeholders</h3>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>For Educational Institutions:</strong> I bring three decades of proven innovation in computing education, with a track record of scaling successful programs across Singapore's education system. My approach combines deep technical expertise with sophisticated understanding of learner-centric pedagogy.
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>For Industry Partners:</strong> I offer unique bridging capabilities between academic and industry contexts, with established networks and the ability to develop programs that prepare students for real-world computing challenges while maintaining educational rigor.
+                    </p>
+                    <p>
+                        <strong>For Policy Makers:</strong> My experience spans classroom innovation to systemic change, offering insights into sustainable educational transformation. The BuildingBloCS model demonstrates how student-led initiatives can achieve national scale with appropriate support structures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2024 Gi Soong Chee. Transforming computing education through learner-centric innovation.</p>
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:gi.soongchee@computing.sg">gi.soongchee@computing.sg</a>
+                    <a href="https://www.linkedin.com/in/gisoongchee" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Add hover effects for cards
+        document.querySelectorAll('.award-card, .skill-category, .reflection-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

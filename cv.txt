@@ -1,0 +1,71 @@
+Gi Soong Chee
+Computing Educator/Advocate
+Singapore
+gi.soongchee@computing.sg | www.linkedin.com/in/gisoongchee
+Professional Summary
+Dedicated educator with 3 decades of experience transforming Computing /STEM education
+through learner-centric pedagogy and adult professional development. Combines classroom
+expertise with systemic curriculum design, recognised nationally for pioneering learner-led
+initiatives, building learners' communities, and bridging industry-academia gaps.
+Professional Experience
+Training & Adult Education
+● WSQ Diploma in Design and Development of Learning for Performance 2.0 (DDDLP
+2.0): Expected completion Jul 2026
+● WSQ Advanced Certificate in Learning and Performance 2.0 (ACLP 2.0): Completed
+Jul 2024
+Computing Educator (1996–2024)
+● Anderson Serangoon Junior College (2023–2024): Developed advanced computing
+curricula integrating AI and informatics principles.
+● National Institute of Education (NIE) (2021–2023): Teaching Fellow mentoring
+in-service educators in computational thinking, AI literacy and computing/coding
+education.
+● Dunman High School (2007–2020): Pioneered student-led coding clubs and
+national/international competition teams.
+● Victoria Junior College (1996–2007): Early career focus on foundational
+programming education and student-centred programmes.
+Awards and Recognition
+● Outstanding Computing Teachers Award (2016): Google-IMDA-MOE recognition
+for classroom innovation.
+● Python Software Foundation Fellow (2023 Q1): Acknowledged for contributions to
+the Python community outreach efforts.
+● Academy of Singapore Teachers Associate (2024): Awarded Innovator in fostering
+teachers' professional development.
+Learner-Centric Contributions
+1. BuildingBloCS
+○ Founded and oversees a nationwide "By Students, For Students" Computing
+education outreach initiative across 50+ schools in Singapore and thousands
+of students annually since 2017, enabling peer-taught and facilitated
+workshops on AI, computational thinking and software development.
+2. Computing@ASR & Computing Teachers Content Upgrading Course
+○ Discord open platform customisation and integration to support learner-first,
+self-directed and peer-appraised interactions for Computing students and ICT
+Champions leadership development, and in-service Computing teachers
+conversion programmes.
+Adult Learning Leadership
+● NIE Teaching Fellowship
+● Established partnership with MOE CPDD (Curriculum Planning &
+Development Division) for the conversion training of in-service teachers on
+learner-centric pedagogies and content upgrading for O/A-Level Computing.
+Conducted first two runs in 2022 and 2023.
+● JC Computing Teachers Community
+● Initiator and contributor of byte-size/JIT resources sharing for junior college
+computing teachers. Liaised with industry partners for annual learning
+journeys for high school computing teachers.
+● FOSSASIA Open Source Tech Conference
+● Facilitated open-source sessions for regional/international participants in
+Singapore (2018 - 2023, 2025).
+● PyCon Singapore Education Summit
+○ Organised annual computing education seminar since 2015 to foster
+professional development and networking for computing educators across
+high school, tertiary and industry sectors.
+● PyCon Singapore Technical Conference
+○ Revived Singapore's Python programming language conference in 2025 with
+SIT after a 5-year hiatus.
+Certifications
+● CS50 for Educators Workshop (Harvard University) (2023, 2024)
+● Python, data science, AI (DataCamp with AI Singapore 2019-2024)
+Technical Proficiencies / Commmunication
+● Currently Learning: Agentic Workflow, Vibe Engineering
+● Technical: Python, JavaScript, SQL, MongoDB, Web App Development, Data
+Structures and Algorithms, Project Management, Prompt Engineering
+● Languages Spoken & Written: English, Chinese
