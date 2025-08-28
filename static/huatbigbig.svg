@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="url(#grad1)" stroke="#2C5F8A" stroke-width="1"/>
+  
+  <!-- HUAT text -->
+  <text x="16" y="12" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="white">HUAT</text>
+  
+  <!-- BIG BIG text -->
+  <text x="16" y="22" font-family="Arial, sans-serif" font-size="6" font-weight="bold" text-anchor="middle" fill="white">BIG BIG</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="8" cy="8" r="1.5" fill="#FFD700" opacity="0.8"/>
+  <circle cx="24" cy="8" r="1.5" fill="#FFD700" opacity="0.8"/>
+  <circle cx="8" cy="24" r="1.5" fill="#FFD700" opacity="0.8"/>
+  <circle cx="24" cy="24" r="1.5" fill="#FFD700" opacity="0.8"/>
+</svg>
